@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        ball = GetComponent<Rigidbody>();
         UpdateText();
     }
 
@@ -23,6 +24,7 @@ public class ScoreManager : MonoBehaviour
             score++;
             ball.position = new Vector3(0, 0.12f, -3f);
             ball.velocity = Vector3.zero;
+            ball.rotation = Quaternion.Euler(0, 0, 0);
 
         }
         else if (collision.gameObject.name =="Golf Club")
