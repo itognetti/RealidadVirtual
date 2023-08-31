@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     public Transform target;            // La transformación de la esfera a seguir
-    public float smoothSpeed = 0.125f;  // La suavidad del movimiento de la cámara
+    public float smoothSpeed = 0.1f;  // La suavidad del movimiento de la cámara
     public Vector3 offset;              // La distancia entre la esfera y la cámara
 
     public Transform hole1;
@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour
     private void Update()
     {
         // Si la esfera se ha detenido (por ejemplo, velocidad cercana a cero)
-        if (target.GetComponent<Rigidbody>().velocity.magnitude < 0.1f)
+        if (target.GetComponent<Rigidbody>().velocity.magnitude == 0f)
         {
             isFollowing = true;  // Habilitar el seguimiento de la cámara
         }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    Rigidbody ball;
     public Text scoreText; 
     public GameObject hoyo;
     public GameObject palo;
@@ -20,6 +21,9 @@ public class ScoreManager : MonoBehaviour
         if (collision.gameObject.name == "Hole")
         {
             score++;
+            ball.position = new Vector3(0, 0.12f, -3f);
+            ball.velocity = Vector3.zero;
+
         }
         else if (collision.gameObject.name =="Golf Club")
         {
